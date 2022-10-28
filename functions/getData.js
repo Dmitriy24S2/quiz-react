@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
     astraDatabaseRegion: process.env.REGION,
     // applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,
     applicationToken: process.env.TOKEN,
-    baseUrl: ''
+    baseUrl: '.'
   })
 
   // create a shortcut to the users collection in the app namespace/keyspace
