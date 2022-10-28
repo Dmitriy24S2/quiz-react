@@ -23,6 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "netlify dev",
+    "start": "react-scripts start",
     "start:frontend": "react-scripts start",
     "start:backend": "nodemon server.ts",
     "build": "react-scripts build",
