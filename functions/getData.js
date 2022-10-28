@@ -1,4 +1,5 @@
 const { createClient } = require('@astrajs/collections')
+
 exports.handler = async (event, context) => {
   // create an {astra_db} client
   const astraClient = await createClient({
@@ -19,9 +20,13 @@ exports.handler = async (event, context) => {
     // search a collection of documents
     // const quizData = await quizCollection.find({ name: { $eq: "Cliff" } });
     const quizData = await quizCollection.find()
+
     return {
       statusCode: 200,
-      body: JSON.stringify(quizData)
+      body: JSON.stringify(quizData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     }
   } catch (error) {
     //   console.log(error),
