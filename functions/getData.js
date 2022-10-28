@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
     astraDatabaseRegion: process.env.REGION,
     // applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,
     applicationToken: process.env.TOKEN,
-    baseUrl: 'https://89adc942-8307-48a1-a223-05cc75dab113-europe-west1.apps.astra.datastax.com'
+    baseUrl: 'apps.astra.datastax.com'
   })
 
   // create a shortcut to the users collection in the app namespace/keyspace
@@ -21,6 +21,7 @@ exports.handler = async (event, context) => {
     // search a collection of documents
     // const quizData = await quizCollection.find({ name: { $eq: "Cliff" } });
     const quizData = await quizCollection.find()
+    console.log('astra client?', astraClient)
 
     return {
       statusCode: 200,
